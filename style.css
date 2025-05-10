@@ -1,0 +1,147 @@
+html, body {
+    margin: 0 0 0 5px;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    cursor: url('img/Cursors/1.png') 16 16, auto;
+    user-select: none; /* znemožní označovanie */
+}
+html:active, body:active {
+    cursor: url('img/Cursors/2.png') 16 16, auto;
+}
+
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    margin-left: 10px;
+    background-color: #000;
+}
+
+#inventory {
+    width: 505px;
+    height: 605px;
+    background: url("img/Other/backpack.jpg");
+    border: 5px solid rgb(50, 0, 0, 0.8);
+    margin: 0 auto;
+    position: absolute;
+    z-index: 3;
+    display: none;
+    top: 60px;
+    left: 390px;
+    border-radius: 7px;
+}
+#inventory div {
+    width: 55px;
+    height: 55px;
+    /* border: 2px solid rgb(96, 11, 11); */
+    background-color: rgb(159, 83, 73, 0.4);
+    border-radius: 10px;
+    position: absolute;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(21, 60px); /* 21 stĺpcov po 32px */
+    grid-auto-rows: 60px; /* výška každého riadku */
+    justify-content: left; /* zarovná grid na stred */
+    gap: 0; /* odstráni medzery medzi blokmi */
+    z-index: 2;
+}
+#grid img {
+    width: 60px;
+    height: 60px;
+    display: block;
+    z-index: 2;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+#game.blurred {
+    filter: blur(5px); /* nastav si intenzitu */
+    pointer-events: none; /* voliteľné: zakáže klikanie na prvky počas pauzy */
+}
+
+#PauseScreen {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    background-color: rgba(100, 100, 100, 0.8);
+    border: 3px solid #000;
+    display: none;
+    color: white;
+    text-align: center;
+    padding-top: 150px;
+    border-radius: 10px;
+    cursor: url('img/Cursors/3.png') 16 16, auto;
+}
+
+#PauseScreen h1 {
+    font-size: 45px;
+    margin-top: -140px;
+    font-family: "DynaPuff", system-ui;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+
+#Back {
+    width: 350px;
+    height: 50px;
+    margin-left: -175px;
+    padding: 10px 50px;
+    font-size: 30px;
+    border: none;
+    cursor: url('img/Cursors/4.png') 16 16, auto;
+    background: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 4px 5px 0 #000;
+    position: absolute;
+}
+#Back:hover:active {
+    cursor: url('img/Cursors/4.png') 16 16, auto;
+}
+#Back:active {
+    margin-left: -173.5px;
+    margin-top: 3px;
+}
+
+#Audio_settings {
+    margin-top: 310px;
+    position: absolute;
+    line-height: 40px;
+    font-size: 30px;
+}
+#Audio_settings img {
+    width: 50px;
+    height: auto;
+    float: right;
+    margin-right: -175px;
+    border-radius: 50%;
+    margin-top: -7px;
+}
+#Sound img {
+    margin-top: -7px;
+}
+#Music span,
+#Sound span {
+    float: left;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+#Audio_settings img:hover {
+    cursor: url("img/Cursors/4.png") 16 16, auto;
+}
+#imgVolOn,
+#imgVolOff {
+    -webkit-user-drag: none; /* znemožní ťahanie obrázka */
+}
